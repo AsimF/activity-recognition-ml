@@ -4,15 +4,65 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity" >
 
-    <TextView
-        android:layout_width="wrap_content"
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/TabBar"
+        android:layout_width="409dp"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/DataCollectTab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#E9DE0E"
+            android:icon="@android:drawable/ic_menu_myplaces"
+            android:text="Data-Collect" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/TrainTab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#6AF11E"
+            android:icon="@android:drawable/ic_menu_recent_history"
+            android:text="Train" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/TestTab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00EE18D2"
+            android:icon="@android:drawable/ic_media_play"
+            android:text="Test" />
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="410dp"
+        android:layout_height="659dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TabBar"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/dataCollectInstructions"
+            android:layout_width="410dp"
+            android:layout_height="122dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="Please click on one of the following activities and begin performing and recording the action. When you are finished or have completed the following activity for at least 5 seconds, please click on the button again to end recording."
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+    </androidx.viewpager.widget.ViewPager>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
