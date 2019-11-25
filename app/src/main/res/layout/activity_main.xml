@@ -10,12 +10,9 @@
         android:id="@+id/TabBar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/data-view"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/DataCollectTab"
@@ -43,63 +40,184 @@
 
     </com.google.android.material.tabs.TabLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/data-view"
-        android:layout_width="413dp"
-        android:layout_height="733dp">
-
-        <TextView
-            android:id="@+id/dataCollectInstructions"
-            android:layout_width="403dp"
-            android:layout_height="101dp"
-            android:layout_marginTop="16dp"
-            android:fontFamily="sans-serif-condensed-medium"
-            android:text="Please click on one of the following activities and begin performing and recording the action. When you are finished or have completed the following activity for at least 5 seconds, please click on the button again to end recording."
-            android:textAlignment="center"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textSize="12sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageButton
-            android:id="@+id/stand-button"
-            android:layout_width="0dp"
-            android:layout_height="149dp"
-            android:layout_marginTop="116dp"
-            android:scaleType="fitCenter"
-            app:layout_constraintTop_toBottomOf="@+id/dataCollectInstructions"
-            app:srcCompat="@drawable/standing"
-            tools:layout_editor_absoluteX="0dp" />
-
-        <ImageButton
-            android:id="@+id/jump-button"
-            android:layout_width="0dp"
-            android:layout_height="149dp"
-            android:layout_marginTop="484dp"
-            android:scaleType="fitCenter"
-            app:layout_constraintTop_toBottomOf="@+id/dataCollectInstructions"
-            app:srcCompat="@drawable/jumping"
-            tools:layout_editor_absoluteX="16dp" />
-
-        <ImageButton
-            android:id="@+id/imageButton3"
-            android:layout_width="0dp"
-            android:layout_height="134dp"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/running"
-            tools:layout_editor_absoluteX="-10dp"
-            tools:layout_editor_absoluteY="407dp" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/pager"
-        android:layout_width="410dp"
-        android:layout_height="659dp"
-        tools:layout_editor_absoluteX="-50dp"
-        tools:layout_editor_absoluteY="72dp">
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TabBar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/data-view"
+            android:layout_width="0dp"
+            android:layout_height="0dp">
+
+            <TextView
+                android:id="@+id/dataCollectInstructions"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="Please click on one of the following activities and begin performing and recording the action. When you are finished or have completed the following activity for at least 5 seconds, please click on the button again to end recording."
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/collect-text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="casual"
+                android:text="TAP below to begin collecting data..."
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:typeface="normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dataCollectInstructions" />
+
+            <ImageButton
+                android:id="@+id/stand-button"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="8dp"
+                android:scaleType="fitCenter"
+                app:layout_constraintBottom_toTopOf="@+id/walk-button"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/collect-text"
+                app:srcCompat="@drawable/standing" />
+
+            <ImageButton
+                android:id="@+id/walk-button"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:scaleType="fitCenter"
+                app:layout_constraintBottom_toTopOf="@+id/jump-button"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/stand-button"
+                app:srcCompat="@drawable/running" />
+
+            <ImageButton
+                android:id="@+id/jump-button"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="32dp"
+                android:scaleType="fitCenter"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/walk-button"
+                app:srcCompat="@drawable/jumping" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/train-view"
+            android:layout_width="0dp"
+            android:layout_height="0dp">
+
+            <TextView
+                android:id="@+id/train-text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:fontFamily="casual"
+                android:text="TAP BELOW to begin training the model... NOTE: You must have atleast 5 seconds worth of data in every action to train it properly."
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:typeface="normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/train-button"
+                android:layout_width="0dp"
+                android:layout_height="132dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="32dp"
+                android:scaleType="fitCenter"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/train-text"
+                app:srcCompat="@drawable/train" />
+
+            <Button
+                android:id="@+id/reset-button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RESET DATA + MODEL (WARNING: This will delete any previous models and data collected!)"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/train-button" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/test-view"
+            android:layout_width="0dp"
+            android:layout_height="0dp">
+
+            <TextView
+                android:id="@+id/test-text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="62dp"
+                android:fontFamily="casual"
+                android:text="Test out the model below!"
+                android:textAlignment="center"
+                android:textSize="36sp"
+                android:textStyle="bold"
+                android:typeface="normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/test-button"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="62dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="62dp"
+                android:scaleType="fitCenter"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/test-text"
+                app:srcCompat="@drawable/execute" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.viewpager.widget.ViewPager>
 
