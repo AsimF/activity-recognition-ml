@@ -8,9 +8,9 @@
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/TabBar"
-        android:layout_width="409dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/data-view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -43,26 +43,64 @@
 
     </com.google.android.material.tabs.TabLayout>
 
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/pager"
-        android:layout_width="410dp"
-        android:layout_height="659dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TabBar"
-        app:layout_constraintVertical_bias="0.0">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/data-view"
+        android:layout_width="413dp"
+        android:layout_height="733dp">
 
         <TextView
             android:id="@+id/dataCollectInstructions"
-            android:layout_width="410dp"
-            android:layout_height="122dp"
+            android:layout_width="403dp"
+            android:layout_height="101dp"
+            android:layout_marginTop="16dp"
             android:fontFamily="sans-serif-condensed-medium"
             android:text="Please click on one of the following activities and begin performing and recording the action. When you are finished or have completed the following activity for at least 5 seconds, please click on the button again to end recording."
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textSize="12sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/stand-button"
+            android:layout_width="0dp"
+            android:layout_height="149dp"
+            android:layout_marginTop="116dp"
+            android:scaleType="fitCenter"
+            app:layout_constraintTop_toBottomOf="@+id/dataCollectInstructions"
+            app:srcCompat="@drawable/standing"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <ImageButton
+            android:id="@+id/jump-button"
+            android:layout_width="0dp"
+            android:layout_height="149dp"
+            android:layout_marginTop="484dp"
+            android:scaleType="fitCenter"
+            app:layout_constraintTop_toBottomOf="@+id/dataCollectInstructions"
+            app:srcCompat="@drawable/jumping"
+            tools:layout_editor_absoluteX="16dp" />
+
+        <ImageButton
+            android:id="@+id/imageButton3"
+            android:layout_width="0dp"
+            android:layout_height="134dp"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/running"
+            tools:layout_editor_absoluteX="-10dp"
+            tools:layout_editor_absoluteY="407dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="410dp"
+        android:layout_height="659dp"
+        tools:layout_editor_absoluteX="-50dp"
+        tools:layout_editor_absoluteY="72dp">
+
     </androidx.viewpager.widget.ViewPager>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
